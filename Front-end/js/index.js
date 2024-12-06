@@ -1,9 +1,5 @@
-// data=localStorage.getItem(1)
-// data=JSON.parse(data)
-// console.log(data);
 
 
-// Function to log individual donor data
 function logDonorData() {
     // Retrieve the donor data from localStorage
     const storedData = localStorage.getItem('donorData');
