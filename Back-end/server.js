@@ -33,6 +33,11 @@ const app=http.createServer((req,res)=>{
         res.end(fs.readFileSync("../Front-end/index.html"))
     }
 
+    else if(pathname=="/images/bgmain.jpg"){
+        res.writeHead(200,{"Content-Type":"text/jpg"})
+        res.end(fs.readFileSync("../Front-end/images/bgmain.jpg"))
+    }
+
     if(pathname=="/submit"&&req.method=="POST"){
         let body=""
         req.on("data",(chunks)=>{

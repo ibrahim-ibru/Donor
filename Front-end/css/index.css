@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Parkinsans:wght@300..800&display=swap');
-*{
+body{
     margin: 0;
     font-family: "Parkinsans", sans-serif;
+    background-image: url("../images/360_F_67704008_fxdmJ8wDOqDYts9P3tzdbxqZf8NfWT21.jpg");
 }
 
 .nav{
