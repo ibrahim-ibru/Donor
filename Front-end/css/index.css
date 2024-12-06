@@ -44,7 +44,7 @@
 }
 
 .tmain button{
-    width: 32%;
+    width: auto;
     background-color: red;
     height: 100%;
     border: none;
@@ -53,6 +53,11 @@
 }
 .phone{
     display: none;
+}
+
+.phone input{
+    border: none;
+    background-color: rgb(252, 140, 140);
 }
 
 tr,td,th{
@@ -83,6 +88,10 @@ tr,td,th{
     border-radius: 5px;
 }
 
+tbody input{
+    width: 90%;
+    border: none;
+}
 
 
 
@@ -102,6 +111,13 @@ tr,td,th{
     .add-btn button{
         padding: 8px 20px;
         font-size: 12px;
+    }
+    
+    .donor-form{
+        height: 30vh;
+        width: 45%;
+        margin-top: 10%;
+        line-height: 50px;
     }
     
 }
@@ -151,8 +167,24 @@ tr,td,th{
         display: flex;
         justify-content: space-evenly;
         margin-top: 20px;
+        margin-bottom: 5%;
     }
     .buttons-phone button{
         display: inline;
+    }
+
+    .donor-form{
+        height: 45vh;
+        width: 60%;
+        margin-top: 10%;
+        line-height: 50px;
+    padding: 4% 2%;
+
+    }
+
+    .donor-form input{
+        padding: 2px 5px;
+        border: 1px solid red;
+        border-radius: 5px;
     }
 }
