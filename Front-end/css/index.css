@@ -2,14 +2,23 @@
 body{
     margin: 0;
     font-family: "Parkinsans", sans-serif;
-    background-image: url("../images/360_F_67704008_fxdmJ8wDOqDYts9P3tzdbxqZf8NfWT21.jpg");
+    background-image: url("../images/bgmain.jpg");
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+.indexbody{
+    background-image: url("../images/indeximg.jpg");
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .nav{
     height: 130px;
     width: 100%;
-    background-image:linear-gradient(to left,whitesmoke,rgb(221, 216, 216),white);
+    background-image:linear-gradient(to left,transparent,rgb(221, 216, 216),transparent);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,12 +36,19 @@ body{
 
 .add-btn button{
     padding: 15px 40px;
-    background-image:linear-gradient(to bottom ,red,rgb(245, 171, 171)) ;
+    background-image:linear-gradient(to bottom ,red,rgb(249, 117, 117)) ;
     border: 0;
     border-radius: 10px;
     color: white;
     font-weight: 600;
     font-size: 15px;
+}
+
+.add-btn button:hover{
+    background-image: none;
+    color: red;
+    background-color: white;
+    box-shadow: 3px 5px 5px 3px red;
 }
 .display-details{
     width: 100%;
@@ -52,7 +68,9 @@ body{
     border: none;
     border-radius: 5px;
     color: aliceblue;
+    font-size: 11px;
 }
+
 .phone{
     display: none;
 }
@@ -64,6 +82,7 @@ body{
 
 tr,td,th{
     border: 1px solid black;
+    background-color: white;
 }
 
 .buttons-phone button{
@@ -74,10 +93,7 @@ tr,td,th{
     height: 40vh;
     margin: auto;
     width: 25%;
-    margin-top: 5%;
-    box-shadow: 5px 5px 8px 3px rgb(223, 127, 127);
-    border: 2px ridge red;
-    border-radius: 30px;
+    margin-top: 3%;
     text-align: center;
     padding: 4% 4%;
     line-height: 40px;
@@ -90,6 +106,24 @@ tr,td,th{
     border-radius: 5px;
 }
 
+.donor-form button{
+    background-color: red;
+    margin-top: 5%;
+    padding: 10px 25px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.donor-form button:hover{
+    background-color: white;
+    color: red;
+    scale: 1.05;
+    border: 1px solid red;
+    padding: 8px 25px;
+}
 tbody input{
     width: 90%;
     border: none;

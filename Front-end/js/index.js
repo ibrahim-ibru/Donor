@@ -31,7 +31,7 @@ function logDonorData() {
                     <td ><input type="text" name="" id="bldgrp" value="${donor.bloodgroup}"></td>
                     <td ><input type="text" name="" id="addrs" value="${donor.addrs}"></td>
                     <td ><input type="text" name="" id="ph" value="${donor.phone}"></td>
-                    <td style="border: none; width: 148px;">
+                    <td style="border: none;background-color: none;width: 148px;">
                         <button style="background-color: blue;" onclick=" editDetails(${index},"nam","gen","bldgrp","addrss","ph")">EDIT</button>
                         <button style="background-color: green;" onclick="saveDetails(${index},"nam","gen","bldgrp","addrss","ph")">SAVE</button>
                         <button onclick="delDetails(${index},"nam","gen","bldgrp","addrss","ph")">DELETE</button></td>
