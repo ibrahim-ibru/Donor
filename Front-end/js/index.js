@@ -39,7 +39,7 @@ function handleEdit(id) {
 }
 
 async function handleDelete(id){
-    const red= await fetch("http://localhost:3000/delete",{
+    const res= await fetch("http://localhost:3000/delete",{
         method:"DELETE",
         headers:{"Content-Type":"text/plain"},
         body:id
@@ -47,7 +47,8 @@ async function handleDelete(id){
     console.log(res);
     if(res.status==200){
         alert("Successfully Deleted")
-        logDonorData()
+        logDonorData();
+        
     }
     else{
         alert("Failed to Delete.Try again...")
