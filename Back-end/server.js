@@ -7,7 +7,7 @@ const {MongoClient}=require("mongodb")
 const { error } = require("console")
 const client=new MongoClient("mongodb://127.0.0.1:27017/")
 
-const app=http.createServer((req,res)=>{
+const app=http.createServer(async (req,res)=>{
     const db=client.db("newdb")
     const collection=db.collection("donors")
     const {pathname}=url.parse(req.url)
@@ -59,6 +59,15 @@ const app=http.createServer((req,res)=>{
             })
         })
     }
+
+    if(pathname=="/getdonors"&&req.method=="GET"){
+        const data= await collection.find().toArray()
+        console.log(data);
+        const jsondata=JSON.stringify(data)
+        res.writeHead(200,{"Content-Type":"text/json"})
+        res.end(jsondata)
+    }
+
 })
 
 
