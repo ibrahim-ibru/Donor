@@ -15,9 +15,9 @@ async function logDonorData() {
         <td ><input type="text" name="address" disabled=true id="address-${donor._id}" value="${donor.address}"></td>
         <td ><input type="text" name="phone" disabled=true id="phone-${donor._id}" value="${donor.phone}"></td>
         <td style="border: none;background-color: none;width: 148px;">
-        <button style="background-color: blue;" onclick="handleEdit(${donor._id})">EDIT</button>
+        <button style="background-color: blue;" onclick="handleEdit('${donor._id}')">EDIT</button>
         <button style="background-color: green;" onclick="">SAVE</button>
-        <button onclick="">DELETE</button></td>
+        <button onclick="handleDelete('${donor._id}')">DELETE</button></td>
                     </tr>
                     `
 
@@ -36,4 +36,16 @@ function handleEdit(id) {
     document.getElementById(`group-${id}`).disabled=false
     document.getElementById(`address-${id}`).disabled=false
     document.getElementById(`phone-${id}`).disabled=false
+}
+
+async function handleDelete(id){
+    const red= await fetch("http://localhost:3000/delete",{
+        method:"DELETE",
+        headers:{"Content-Type":"text/plain"},
+        body:id
+    })
+    console.log(res);
+    if(res.status==200){
+        
+    }
 }
