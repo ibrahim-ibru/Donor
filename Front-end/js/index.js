@@ -46,6 +46,10 @@ async function handleDelete(id){
     })
     console.log(res);
     if(res.status==200){
-        
+        alert("Successfully Deleted")
+        logDonorData()
+    }
+    else{
+        alert("Failed to Delete.Try again...")
     }
 }

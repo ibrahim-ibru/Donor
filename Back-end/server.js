@@ -3,7 +3,7 @@ const fs=require("fs")
 const url=require("url")
 const queryString=require("querystring")
 const PORT=3000
-const {MongoClient}=require("mongodb")
+const {MongoClient,ObjectId}=require("mongodb")
 const { error } = require("console")
 const client=new MongoClient("mongodb://127.0.0.1:27017/")
 
@@ -58,6 +58,8 @@ const app=http.createServer(async (req,res)=>{
                 console.log(error);
             })
         })
+        res.writeHead(200,{"Content-Type":"text/html"})
+        res.end(fs.readFileSync("../Front-end/index.html"))
     }
 
     if(pathname=="/getdonors"&&req.method=="GET"){
@@ -74,6 +76,19 @@ const app=http.createServer(async (req,res)=>{
             body+=chunks.toString()
             console.log(body);
         })
+        req.on("end",async()=>{
+            let _id=new ObjectId(body)
+            console.log(_id);
+            await collection.deleteOne({_id}).then(()=>{
+                res.writeHead(200,{"Content-Type":"text/json"})
+                res.end("Successfully Deleted")
+            }).catch((error)=>{
+                res.writeHead(400,{"Content-Type":"text/json"});
+                res.end("failed \nError : "+error)
+            })
+            
+        })
+        
     }
 
 })
