@@ -68,6 +68,14 @@ const app=http.createServer(async (req,res)=>{
         res.end(jsondata)
     }
 
+    if(pathname=="/delete"&& req.method=="DELETE"){
+        let body=""
+        req.on("data",(chunks)=>{
+            body+=chunks.toString()
+            console.log(body);
+        })
+    }
+
 })
 
 
