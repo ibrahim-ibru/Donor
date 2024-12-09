@@ -73,6 +73,7 @@ const app=http.createServer(async (req,res)=>{
     if(pathname=="/delete"&& req.method=="DELETE"){
         let body=""
         req.on("data",(chunks)=>{
+            // here data is a keyword like onclick to fetch data and the whole data can access on the variable chunks 
             body+=chunks.toString()
             console.log(body);
         })
@@ -89,6 +90,31 @@ const app=http.createServer(async (req,res)=>{
             
         })
         
+    }
+    if(pathname=="/update" && req.method=="PUT"){
+        let body=""
+        req.on("data",(a)=>{
+            body+=a.toString()
+            console.log(body);
+        })
+        req.on("end",async ()=>{
+            let data=JSON.parse(body)
+            let _id=new ObjectId(data.id)
+            let updatedata={
+                name:data.name,
+                gender:data.gender,
+                group:data.group,
+                address:data.address,
+                phone:data.phone
+            }
+            await collection.updateOne({_id},{$set:updatedata}).then(()=>{
+                res.writeHead(201,{"Content-Type":"text/json"})
+                res.end("Successfully Updated")
+            }).catch(()=>{
+                res.writeHead(400,{"Content-Type":"text/json"})
+                res.end("Failed")
+            })
+        })
     }
 
 })
